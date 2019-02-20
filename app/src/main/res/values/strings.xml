@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">NFC-Tag-UID-Reader</string>
+
+    <string name="label_anweisung">
+        Halten Sie einen NFC-Tag an die NFC-Antenne des Android-Geräts.\n\n
+        Auf dem NFC-Tag muss sich ein NDEF-Datensatz mit dem Dummy-MIME-Type <i>application/abc</i> befinden.
+    </string>                 
+    
+    <string name="titel_activity_2">NFC-Tag erkannt</string>
+    
+</resources>

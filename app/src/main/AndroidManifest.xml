@@ -1,0 +1,52 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+		  package="de.mide.nfc.uidreader"
+		  android:installLocation="auto"
+		  android:versionCode="11"
+		  android:versionName="1.10 (Februar 2019)" >
+		  
+              
+    <!-- Berechtigung für Zugriff auf NFC. -->              
+    <uses-permission android:name="android.permission.NFC" />
+
+    <!-- Diese App ist nur für NFC-fähige Geräte geeignet, soll also
+         nicht-NFC-fähigen Geräten NICHT im App-Store angezeigt werden. -->
+    <uses-feature android:name="android.hardware.nfc"
+                  android:required="true" />
+    
+    
+    <application android:allowBackup="true"        
+                 android:icon="@drawable/ic_launcher"
+                 android:label="@string/app_name"
+                 android:theme="@style/AppTheme" >
+        
+        <activity android:name="de.mide.nfc.uidreader.MainActivity"            
+            	  android:label="@string/app_name" >
+            
+            <intent-filter>
+                <action   android:name="android.intent.action.MAIN"       />
+                <category android:name="android.intent.category.LAUNCHER" />                
+            </intent-filter>                        	              
+                        	  
+        </activity>
+                
+        <activity android:name="de.mide.nfc.uidreader.NFCTagDiscoveredActivity"            
+            	  android:label="@string/titel_activity_2" >
+                                    
+	  		<intent-filter>
+	    		<action   android:name="android.nfc.action.NDEF_DISCOVERED"  />
+	    		<category android:name="android.intent.category.DEFAULT"     />
+				<data     android:mimeType="application/abc"                 />	    		
+	  		</intent-filter>
+	  		      
+        </activity>                
+        
+        <!-- 
+        	 NFC-Tag muss als ERSTEN Record einen "MIME-Record"
+             mit dem "erfundenen" Mime-Type "application/abc" enthalten.
+             Siehe NDEF-Datei (benötigt Eclipse-NFC-Plugin:
+             http://code.google.com/p/nfc-eclipse-plugin/ )
+         -->
+        
+    </application>
+
+</manifest>
