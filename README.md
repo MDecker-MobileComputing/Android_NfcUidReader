@@ -1,6 +1,6 @@
 # Android-App: UID von NFC-Tag auslesen
 
-Source code for an Android app that shows how to read out the UID of an NFC tag with the custom mime type `application/abc`.
+Source code for an Android app that shows how to read out the UID of an [NFC](https://developer.android.com/guide/topics/connectivity/nfc/) tag with the custom mime type `application/abc`.
 
 <br>
 
