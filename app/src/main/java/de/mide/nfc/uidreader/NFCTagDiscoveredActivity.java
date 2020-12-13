@@ -82,18 +82,24 @@ public class NFCTagDiscoveredActivity extends Activity {
 		
 		int len = bytes.length;
 		
-		if (len == 0) return "<leer>";
+		if (len == 0) {
+
+			return "<leer>";
+		}
 		
 		int counter = 0;
 		
 		for (byte currentByte : bytes) {
+
 			String hexStr = String.format("%02X", currentByte);
 			sb.append(hexStr);
 			
 			// ggf. noch Doppelpunkt als Trenner zwischen zwei Bytes einfügen
 			counter++;
-			if (counter < len) 
+			if (counter < len) {
+
 				sb.append(':');
+			}
 		}
 		
 		return sb.toString();
